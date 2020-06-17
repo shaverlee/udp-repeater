@@ -7,7 +7,7 @@ CONF_FILE = 'config.json'
 
 
 def get_conf():
-    path = os.path.dirname(__file__)
+    path = '.'  # os.path.dirname(__file__)
     with open(os.path.join(path, CONF_FILE)) as f:
         return json.load(f)
 
@@ -35,7 +35,7 @@ def main():
         for ip_port in sendto:
             sender_socks[ip_port].sendto(
                 data,
-                socket.SOCK_NONBLOCK,
+                # socket.SOCK_NONBLOCK,
                 ip_port,
             )
 
